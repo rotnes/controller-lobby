@@ -1,11 +1,10 @@
-import Handlebars from "handlebars";
-var lobbyTemplate = require("./lobby.hbs");
+// import Handlebars from "handlebars";
+var lobbyTemplate = require("./lobby.handlebars");
 
 class Lobby {
     constructor (options) {
         console.log("Lobby - contructor");
 
-        //
         this.load();
     }
 
@@ -25,6 +24,7 @@ class Lobby {
         if (data.playButtonAvailable && playButton) {
             playButton.onclick = function() {
                 console.log("Play!");
+                // options.playButtonClicked();
             };
         }
     }

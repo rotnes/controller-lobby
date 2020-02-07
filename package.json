@@ -2,8 +2,19 @@
   "name": "controller-lobby",
   "version": "0.0.1",
   "description": "Controller lobby",
-  "main": "index.js",
+  "main": "dist/lobbyBundle.js",
+  "scripts": {
+    "webpack": "webpack --mode development"
+  },
   "dependencies": {
     "handlebars": "^4.7.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "handlebars-loader": "^1.7.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
   }
 }
