@@ -1,32 +1,34 @@
-// import Handlebars from "handlebars";
-var lobbyTemplate = require("./lobby.handlebars");
+import lobbyTemplate from "./lobby.handlebars";
 
 class Lobby {
     constructor (options) {
-        console.log("Lobby - contructor");
-
-        this.load();
+        console.log("Lobby - constructor");
+        this.visible = false;
     }
 
-    load () {
-        // let lobbyTemplate = document.getElementById('lobbyTemplate');
-        let template = Handlebars.compile(lobbyTemplate);
-
+    show () {
+        console.log("Lobby - show");
         let data = {
             players: 1,
             maxPlayers: 2,
             playButtonAvailable: true,
         };
-        let box = document.getElementById('lobby');
-        box.innerHTML = template(data);
+        let div = document.createElement('div');
+        div.id = 'lobby-container';
+        div.innerHTML = lobbyTemplate(data);
+        document.body.appendChild(div);
 
-        let playButton = document.getElementById('play-button');
-        if (data.playButtonAvailable && playButton) {
-            playButton.onclick = function() {
-                console.log("Play!");
-                // options.playButtonClicked();
-            };
+        this.visible = true;
+    }
+
+    hide () {
+        console.log("Lobby - hide");
+        let e = document.getElementById('lobby-container');
+        if (e) {
+            e.remove();
+            this.visible = false;
         }
+
     }
 }
 

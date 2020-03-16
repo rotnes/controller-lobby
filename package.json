@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Controller lobby",
   "main": "dist/lobbyBundle.js",
+  "module": "src/index.js",
   "scripts": {
     "webpack": "webpack --mode development"
   },

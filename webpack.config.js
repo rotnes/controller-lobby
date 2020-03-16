@@ -1,16 +1,15 @@
 const controllerConfig = {
     entry: './src/index.js',
-    // 2
     module: {
         rules: [
+            {
+                test: /\.handlebars$/,
+                loader: "handlebars-loader",
+            },
             {
                 test: /\.(js)$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
-            },
-            {
-                test: /\.handlebars$/,
-                loader: "handlebars-loader"
             }
         ]
     },
@@ -19,8 +18,9 @@ const controllerConfig = {
     },
     output: {
         path: __dirname + '/dist',
-        publicPath: '/',
-        filename: 'lobbyBundle.js'
+        filename: 'lobbyBundle.js',
+        library: 'Lobby',
+        publicPath: 'lobby'
     }
 };
 
