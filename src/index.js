@@ -1,10 +1,10 @@
-import './main';
+import './scss/main';
 // import styles from './app.module';
-import lobbyTemplate from "./lobby.handlebars";
+import lobbyTemplate from './templates/lobby.handlebars';
 
 class Lobby {
     constructor (options) {
-        console.log("Lobby - constructor");
+        console.log('Lobby - constructor');
         this.visible = false;
     }
 

@@ -31,14 +31,29 @@ module.exports = {
                 loader: 'handlebars-loader',
             },
             {
-                test: /\.(js)$/,
+                enforce: 'pre',
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'eslint-loader',
+            },
+            {
+                test: /\.js$/,
                 exclude: /(node_modules)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ["@babel/preset-env"]
-                    }
-                }
+                use: [
+                    // {
+                    //     loader: 'eslint-loader',
+                    //     options: {
+                    //         fix: true,
+                    //         emitError: true,
+                    //     },
+                    // },
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env'],
+                        }
+                    },
+                ],
             },
             {
                 test: /\.module\.s(a|c)ss$/,
@@ -72,12 +87,7 @@ module.exports = {
                         },
                     },
                 ]
-            }
-            // {
-            //     test: /(\\.jsx|\\.js)$/,
-            //     loader: 'eslint-loader',
-            //     exclude: /node_modules/
-            // }
+            },
         ],
     },
     resolve: {
