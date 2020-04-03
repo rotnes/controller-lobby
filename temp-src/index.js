@@ -1,5 +1,3 @@
-import './main';
-// import styles from './app.module';
 import lobbyTemplate from "./lobby.handlebars";
 
 class Lobby {
@@ -35,8 +33,3 @@ class Lobby {
 }
 
 export default Lobby;
-
-(function(){
-    const lobby = new Lobby();
-    lobby.show();
-}());
