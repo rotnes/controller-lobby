@@ -1,17 +1,27 @@
-<div class="app">
-    <div class="container has-text-centered is-fluid lobby">
-        <div>
-            <h1 class="title">Waiting for more players to connect</h1>
+<div class="container">
+    <div class="header">
+        <div class="logo top"></div>
+    </div>
+    <div>
+        <h1 class="title">Waiting for more players to connect</h1>
+    </div>
+    <div>
+        <p class="subtitle">Players joined:</p>
+        <span>{{players}} / {{maxPlayers}}</span>
+        <br/><br/>
+        {{#if playButtonAvailable}}
+            Hi
+        {{else}}
+            <span class="icon is-medium loader"></span>
+        {{/if}}
+    </div>
+    <div class="footer">
+        <div class="player">
+            <span>Player 01</span>
         </div>
-        <div>
-            <p class="subtitle">Players joined:</p>
-            <span>{{players}} / {{maxPlayers}}</span>
-            <br/><br/>
-            {{#if playButtonAvailable}}
-                Hi
-            {{else}}
-                <span class="icon is-medium loader"></span>
-            {{/if}}
+        <div class="logo bottom"></div>
+        <div class="room">
+            <span>sdfagafas</span>
         </div>
     </div>
 </div>

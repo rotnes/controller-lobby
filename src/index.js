@@ -16,7 +16,8 @@ class Lobby {
             playButtonAvailable: true,
         };
         let div = document.createElement('div');
-        div.id = 'lobby-container';
+        div.id = 'app';
+        div.className = 'app';
         div.innerHTML = lobbyTemplate(data);
         document.body.appendChild(div);
 
