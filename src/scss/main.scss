@@ -1,9 +1,50 @@
-body {
-  background: #ff0080;
+$primary: #3656FB;
+
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy|Montserrat:400,700&display=swap');
+
+html {
+  overflow-y: auto !important;
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-  background: orange;
+body {
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.5;
+  user-select: none;
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  background-color: $primary;
+
+  // Prevent scrolling so users do not accidentally refresh the page.
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  * {
+    outline: none;
+  }
 }
+
+.app {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  margin: 5px;
+  overflow: hidden;
+  border-radius: 30px;
+
+  background-image: url('../assets/default-pattern.jpg');
+  background-size: cover;
+
+  > .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@import './loader';

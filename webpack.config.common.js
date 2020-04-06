@@ -6,7 +6,7 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: 'main.js',
+        filename: isDevelopment ? 'main.js' : 'main.[hash].js',
         path: path.resolve(__dirname, 'dist'),
         library: 'lobby',
         publicPath: 'lobby',
@@ -40,13 +40,6 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
                 use: [
-                    // {
-                    //     loader: 'eslint-loader',
-                    //     options: {
-                    //         fix: true,
-                    //         emitError: true,
-                    //     },
-                    // },
                     {
                         loader: 'babel-loader',
                         options: {
@@ -87,6 +80,14 @@ module.exports = {
                         },
                     },
                 ]
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: isDevelopment ? '[name].[ext]' : '[name].[hash].[ext]',
+                    outputPath: 'images',
+                },
             },
         ],
     },
