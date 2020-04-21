@@ -2,26 +2,55 @@
     <div class="header">
         <div class="logo top"></div>
     </div>
-    <div>
-        <h1 class="title">Waiting for more players to connect</h1>
-    </div>
-    <div>
-        <p class="subtitle">Players joined:</p>
-        <span>{{players}} / {{maxPlayers}}</span>
-        <br/><br/>
-        {{#if playButtonAvailable}}
-            Hi
-        {{else}}
-            <span class="icon is-medium loader"></span>
-        {{/if}}
+    <div class="content">
+        <div class="content-aside">
+            <h1 class="title">...Waiting for more players to connect</h1>
+            <div class="player-pills">
+                {{#each players}}
+                    <div class="pill">
+                        <label>{{this.name}}</label>
+
+                        {{#if this.ready}}
+                            <span class="ready">ready</span>
+                        {{else}}
+                            <span>selecting</span>
+                        {{/if}}
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="main-content">
+            <h2>choose your character</h2>
+            <div class="characters">
+                {{#each characters}}
+                    <div>
+                        <label>
+                            {{this.name}}
+                        </label>
+                        <img src="{{this.avatar}}"
+                             srcset="{{this.avatar}}, {{this.avatar_big}} 2x"
+                             alt="{{this.name}}" />
+                    </div>
+                {{/each}}
+            </div>
+        </div>
     </div>
     <div class="footer">
         <div class="player">
             <span>Player 01</span>
         </div>
         <div class="logo bottom"></div>
-        <div class="room">
-            <span>sdfagafas</span>
+        <div class="player">
+            <span>Roomname</span>
+        </div>
+        <div class="play-button">
+            {{#if playButtonAvailable}}
+                <img src="assets/button-play-inactive.png"
+                     srcset="assets/button-play-inactive.png, assets/button-play-inactive@2x.png 2x"
+                     alt="playbutton">
+            {{else}}
+                <span class="icon is-medium loader"></span>
+            {{/if}}
         </div>
     </div>
 </div>

@@ -11,9 +11,45 @@ class Lobby {
     show () {
         console.log("Lobby - show");
         let data = {
-            players: 1,
+            players: [
+                {
+                    name: 'player 1',
+                    ready: true
+                },
+                {
+                    name: 'player 2',
+                    ready: false
+                }
+            ],
             maxPlayers: 2,
             playButtonAvailable: true,
+            characters: [
+                {
+                    name: 'blank',
+                    avatar: 'assets/avatar-blank.png',
+                    avatar_big: 'assets/avatar-blank@2x.png'
+                },
+                {
+                    name: 'blue',
+                    avatar: 'assets/avatar-blue.png',
+                    avatar_big: 'assets/avatar-blue@2x.png'
+                },
+                {
+                    name: 'pink',
+                    avatar: 'assets/avatar-pink.png',
+                    avatar_big: 'assets/avatar-pink@2x.png'
+                },
+                {
+                    name: 'purple',
+                    avatar: 'assets/avatar-purple.png',
+                    avatar_big: 'assets/avatar-purple@2x.png'
+                },
+                {
+                    name: 'blank',
+                    avatar: 'assets/avatar-blank.png',
+                    avatar_big: 'assets/avatar-blank@2x.png'
+                },
+            ]
         };
         let div = document.createElement('div');
         div.id = 'app';
