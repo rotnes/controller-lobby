@@ -19,3 +19,16 @@ There are 2 main ways which a game developer can use this component:
 - Controller components will be added to the controllerApi. So there are 2 versions of the controllerApi, one that only contains the networking logic for making the p2p connections and one that also contains all controller components, so the game developer is able to do `controllerApi.showLobby()` whenever is the moment for that scene.
 
 A third option is to allow game developers to fork this repo and build their logic on top of it as they see fit, but of course this will require some more work from them + proper testing and reviewing from us to make sure his solution works correctly. (we don't wanna have broken games in our site) 
+
+# Run
+```$xslt
+yarn run build:dev
+```
+```$xslt
+yarn run serve
+```
+
+Or production build:
+```$xslt
+yarn run build:prod
+```
